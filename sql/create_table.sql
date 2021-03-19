@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS tasks;
+
+CREATE TABLE IF NOT EXISTS tasks (
+    task_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    task_description VARCHAR(100) NOT NULL,
+    create_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    is_complete BOOLEAN NOT NULL
+);

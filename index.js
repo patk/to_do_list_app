@@ -5,9 +5,6 @@ const path = require("path");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// postgres database
-const database = require("./database");
-
 // static files
 app.use(express.static("public"));
 app.use("/static", express.static(path.join(__dirname, "public")));
@@ -21,8 +18,12 @@ const { port } = require("./config");
 
 // ejs template engine
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname), "views");
 
 app.listen(port, () => {
   console.log(`Server is listening on localhost: ${port}`);
 });
+
+// routes
+const homeRouter = require("./routes/home");
+
+app.use("/", homeRouter);
