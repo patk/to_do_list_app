@@ -1,1 +1,22 @@
 <h1>To-do list App</h1>
+
+<h2>Your Tasks</h2>
+
+<table>
+  <tr>
+    <th>Task ID</th>
+    <th>Task Description</th>
+    <th>Create At</th>
+    <th>Completed</th>
+  </tr>
+
+  <% for (let i = 0; i < tasks.length; i++) { %>
+    <tr>
+        <td><%= tasks[i].task_id %></td>
+        <td><%= tasks[i].task_description %></td>
+        <td><%= tasks[i].create_at %></td>
+        <td><%= tasks[i].is_complete %></td>
+    </tr>
+  <% } %>  
+  </tr>
+</table>
