@@ -29,3 +29,18 @@ nav {
   color: white;
   text-decoration: none;
 }
+
+.main-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.display-tasks-container {
+  background-color: coral;
+  width: 60%;
+}
+
+.add-tasks-container {
+  background-color: darkcyan;
+  width: 40%;
+}
