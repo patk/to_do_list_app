@@ -1,12 +1,12 @@
 <section class="main-section">
 
-  <div class="display-tasks-container">
+  <div class="display-task-container">
 
     <table>
       <tr>
         <th>List Name</th>
         <th>Task Description</th>
-        <th>Date/Time</th>
+        <th>Date</th>
         <th>Completed</th>
       </tr>
 
@@ -14,7 +14,7 @@
         <tr>
           <td><%= tasks[i].list_name %></td>
           <td><%= tasks[i].task_description %></td>
-          <td><%= tasks[i].date_time %></td>
+          <td><%= tasks[i].task_date.toString().slice(0, 15) %></td>
           <td><%= tasks[i].is_complete %></td>
         </tr>
       <% } %>  
@@ -24,8 +24,34 @@
 
   </div>
 
-  <div class="add-tasks-container">
+  <div class="add-task-container">
     <h1>Add task:</h1>
+    <form id="add-task-form" method="POST" action="">
+
+      <div class="form-field">
+        <label for="task">Task</label>
+        <input id="task" name="task" type="text" required>
+      </div>
+      
+      <div class="form-field">
+        <label for="list">List</label>
+        <select id="list" name="list">
+          <option value=1>Personal</option>
+          <option value=2>Work</option>
+          <option value=3>Study</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="date">Date</label>
+        <input id="date" name="date" type="date">
+      </div>
+
+      <div class="button-wrapper">
+        <button type="submit">Add</button>
+      </div>
+      
+    </form>
 
   </div>
   

@@ -22,11 +22,11 @@ app.use(expressLayouts);
 app.set("layout", "./layouts/layout");
 app.set("view engine", "ejs");
 
-app.listen(port, () => {
-  console.log(`Server is listening on localhost: ${port}`);
-});
-
 // routes
 const homeRouter = require("./routes/home");
 
 app.use("/", homeRouter);
+
+app.listen(port, () => {
+  console.log(`Server is listening on localhost: ${port}`);
+});

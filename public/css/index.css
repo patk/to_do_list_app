@@ -35,12 +35,12 @@ nav {
   flex-direction: row;
 }
 
-.display-tasks-container {
+.display-task-container {
   background-color: coral;
   width: 60%;
 }
 
-.add-tasks-container {
+.add-task-container {
   background-color: darkcyan;
   width: 40%;
 }

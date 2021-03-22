@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS tasks (
     task_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     task_description VARCHAR(100) NOT NULL,
     list_id INT NOT NULL,
-    date_time TIMESTAMPTZ NOT NULL DEFAULT now(),
-    is_complete BOOLEAN NOT NULL,
+    task_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    is_complete BOOLEAN NOT NULL DEFAULT 'false',
 
     FOREIGN KEY(list_id)
     REFERENCES lists(list_id)
