@@ -1,0 +1,31 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Archivo", sans-serif;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: dimgrey;
+  padding: 20px;
+}
+
+.nav-links-container {
+  display: flex;
+  flex-direction: row;
+  width: 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links-container li {
+  list-style: none;
+}
+
+.nav-links-container a {
+  color: white;
+  text-decoration: none;
+}
