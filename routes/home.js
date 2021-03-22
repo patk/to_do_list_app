@@ -4,7 +4,9 @@ const database = require("../database");
 
 router.get("", (req, res) => {
   database
-    .any("SELECT * FROM tasks;")
+    .any(
+      "SELECT tasks.task_id, tasks.task_description, lists.list_name, tasks.date_time, tasks.is_complete FROM tasks LEFT JOIN lists ON tasks.list_id = lists.list_id;"
+    )
     .then((tasks) => {
       res.render("pages/home", {
         title: "Home Page",

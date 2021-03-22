@@ -4,18 +4,18 @@
 
 <table>
   <tr>
-    <th>Task ID</th>
+    <th>List Name</th>
     <th>Task Description</th>
-    <th>Create At</th>
+    <th>Date/Time</th>
     <th>Completed</th>
   </tr>
 
   <% for (let i = 0; i < tasks.length; i++) { %>
     <tr>
-        <td><%= tasks[i].task_id %></td>
-        <td><%= tasks[i].task_description %></td>
-        <td><%= tasks[i].create_at %></td>
-        <td><%= tasks[i].is_complete %></td>
+      <td><%= tasks[i].list_name %></td>
+      <td><%= tasks[i].task_description %></td>
+      <td><%= tasks[i].date_time %></td>
+      <td><%= tasks[i].is_complete %></td>
     </tr>
   <% } %>  
   </tr>
