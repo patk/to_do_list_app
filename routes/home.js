@@ -33,13 +33,6 @@ router.post("/task", (req, res) => {
   const list_id = req.body.list;
   const task_date = req.body.date;
 
-  /*if (task_date === "") {
-    task_date = new Date().toISOString().split("T")[0];
-    //const formattedDate = (date) => date.toISOString().slice(0, 10);
-    //task_date = formattedDate(new Date());
-    console.log("TODAY DATE IS: " + task_date);
-  }*/
-
   database
     .none(
       "INSERT INTO tasks (task_description, list_id, task_date) VALUES ($1, $2, $3);",
