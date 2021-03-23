@@ -6,7 +6,7 @@ const database = require("../database");
 router.get("/", (req, res) => {
   database
     .any(
-      "SELECT tasks.task_id, tasks.task_description, lists.list_name, tasks.task_date, tasks.is_complete FROM tasks LEFT JOIN lists ON tasks.list_id = lists.list_id ORDER BY list_name, task_date;"
+      "SELECT tasks.task_id, tasks.task_description, lists.list_name, tasks.task_date, tasks.is_complete FROM tasks LEFT JOIN lists ON tasks.list_id = lists.list_id ORDER BY list_name, task_date, task_description;"
     )
     .then((tasks) => {
       database
