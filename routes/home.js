@@ -23,10 +23,12 @@ router.post("/", (req, res) => {
   let list_id = req.body.list;
   let task_date = req.body.date;
 
-  if (task_date === "") {
-    const formattedDate = (date) => date.toISOString().slice(0, 10);
-    task_date = formattedDate(new Date());
-  }
+  /*if (task_date === "") {
+    task_date = new Date().toISOString().split("T")[0];
+    //const formattedDate = (date) => date.toISOString().slice(0, 10);
+    //task_date = formattedDate(new Date());
+    console.log("TODAY DATE IS: " + task_date);
+  }*/
 
   database
     .none(

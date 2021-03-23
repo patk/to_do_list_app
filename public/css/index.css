@@ -36,11 +36,52 @@ nav {
 }
 
 .display-task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: coral;
   width: 60%;
+  padding: 20px;
 }
 
 .add-task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: darkcyan;
   width: 40%;
+  padding: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field input,
+select {
+  padding: 10px;
+  /*background-color: #c5cad0;*/
+  border: white;
+  border-radius: 8px;
+  margin: 10px 0px;
+  width: 250px;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button-wrapper button {
+  padding: 15px 65px;
+  background: #6a7b8b;
+  font-size: 15px;
+  color: white;
+  border: 1px;
+  border-radius: 8px;
+  cursor: pointer;
+  /*box-shadow: 3px 3px 5px #47474793;*/
+  /*margin-top: 10px;
+  margin-bottom: 5px;*/
 }
