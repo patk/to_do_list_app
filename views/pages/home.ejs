@@ -26,35 +26,60 @@
 
   </div>
 
-  <div class="add-task-container">
-    <h1>Add task:</h1>
-    <form id="add-task-form" method="POST" action="">
+  <div class="add-task-list-container">
 
-      <div class="form-field">
-        <label for="task">Task</label>
-        <input id="task" name="task" type="text" required>
-      </div>
-      
-      <div class="form-field">
-        <label for="list">List</label>
-        <select id="list" name="list">
-          <option value=1>Personal</option>
-          <option value=2>Work</option>
-          <option value=3>Study</option>
-        </select>
-      </div>
-
-      <div class="form-field">
-        <label for="date">Date</label>
-        <input id="date" name="date" type="date" required>
-      </div>
-
-      <div class="button-wrapper">
-        <button type="submit">Save</button>
-      </div>
-      
-    </form>
+    <div class="add-task-container">
+      <h1>Create new task:</h1>
+      <form id="add-task-form" method="POST" action="/task">
+  
+        <div class="form-field">
+          <label for="task">Task</label>
+          <input id="task" name="task" type="text" required>
+        </div>
+        
+        <div class="form-field">
+          <label for="list">List</label>
+          <select id="list" name="list">
+            <% for (let i = 0; i < lists.length; i++) { %>
+              <option value=<%= lists[i].list_id %>><%= lists[i].list_name%></option>
+            <% } %>
+            <!--<option value=1>Personal</option>
+            <option value=2>Work</option>
+            <option value=3>Study</option>-->
+          </select>
+        </div>
+  
+        <div class="form-field">
+          <label for="date">Date</label>
+          <input id="date" name="date" type="date" required>
+        </div>
+  
+        <div class="button-wrapper">
+          <button type="submit">Add task</button>
+        </div>
+        
+      </form>
+  
+    </div>
+  
+    <div class="add-list-container">
+      <h1>Create new list:</h1>
+      <form id="add-list-form" method="POST" action="/list">
+  
+        <div class="form-field">
+          <label for="list">List title</label>
+          <input id="list" name="list" type="text" required>
+        </div>
+  
+        <div class="button-wrapper">
+          <button type="submit">Add list</button>
+        </div>
+        
+      </form>
+  
+    </div>
 
   </div>
+  
   
 </section>

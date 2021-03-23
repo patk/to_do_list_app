@@ -39,23 +39,30 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: coral;
+  /*background-color: coral;*/
   width: 60%;
+  padding: 20px;
+}
+
+.add-task-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: slategray;
+  width: 40%;
   padding: 20px;
 }
 
 .add-task-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: darkcyan;
-  width: 40%;
   padding: 20px;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
+  margin: 10px 0px;
 }
 
 .form-field input,
@@ -75,10 +82,10 @@ select {
 
 .button-wrapper button {
   padding: 15px 65px;
-  background: #6a7b8b;
+  background: transparent;
   font-size: 15px;
   color: white;
-  border: 1px;
+  border: 1px solid white;
   border-radius: 8px;
   cursor: pointer;
   /*box-shadow: 3px 3px 5px #47474793;*/
@@ -86,8 +93,15 @@ select {
   margin-bottom: 5px;*/
 }
 
+.button-wrapper button:hover {
+  background-color: white;
+  border: 1px solid white;
+  color: black;
+  transition-duration: 0.5s;
+}
+
 .icon-button {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: transparent;
   border: none;
   color: white;
   padding: 12px 16px;
