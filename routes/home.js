@@ -5,7 +5,7 @@ const database = require("../database");
 router.get("/", (req, res) => {
   database
     .any(
-      `SELECT tasks.task_id, tasks.task_description, lists.list_name, tasks.task_date, tasks.is_complete FROM tasks LEFT JOIN lists ON tasks.list_id = lists.list_id;`
+      `SELECT tasks.task_id, tasks.task_description, lists.list_name, tasks.task_date, tasks.is_complete FROM tasks LEFT JOIN lists ON tasks.list_id = lists.list_id ORDER BY list_name, task_date;`
     )
     .then((tasks) => {
       res.render("pages/home", {
@@ -35,6 +35,30 @@ router.post("/", (req, res) => {
       `INSERT INTO tasks (task_description, list_id, task_date) VALUES ($1, $2, $3);`,
       [task_description, list_id, task_date]
     )
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.post("/markcompleted", (req, res) => {
+  database
+    .none("UPDATE tasks SET is_complete = 'true' WHERE task_id = $1", [
+      req.query.taskid,
+    ])
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+router.post("/delete", (req, res) => {
+  database
+    .none("DELETE FROM tasks WHERE task_id = $1", [req.query.taskid])
     .then(() => {
       res.redirect("/");
     })

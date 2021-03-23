@@ -3,19 +3,21 @@
   <div class="display-task-container">
 
     <table>
-      <tr>
+      <!--<tr>
         <th>List Name</th>
         <th>Task Description</th>
         <th>Date</th>
         <th>Completed</th>
-      </tr>
+      </tr>-->
 
       <% for (let i = 0; i < tasks.length; i++) { %>
         <tr>
+          <td><form method="POST" action="/markcompleted?taskid=<%= tasks[i].task_id %>"><button class="icon-button"><i class="fa fa-check-circle"></i></button></form></td>
           <td><%= tasks[i].list_name %></td>
           <td><%= tasks[i].task_description %></td>
           <td><%= tasks[i].task_date.toString().slice(0, 15) %></td>
           <td><%= tasks[i].is_complete %></td>
+          <td><form method="POST" action="/delete?taskid=<%= tasks[i].task_id %>"><button class="icon-button"><i class="fa fa-trash"></i></button></form></td>
         </tr>
       <% } %>  
       </tr>
@@ -48,7 +50,7 @@
       </div>
 
       <div class="button-wrapper">
-        <button type="submit">Add</button>
+        <button type="submit">Save</button>
       </div>
       
     </form>
