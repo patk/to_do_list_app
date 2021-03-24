@@ -18,7 +18,7 @@
               <td class="completed-task"><%= tasks[j].task_description %></td>
               <td class="completed-task"><%= tasks[j].task_date.toString().slice(0, 15) %></td>
             <% } %>
-            <td><form method="POST" action="/delete?taskid=<%= tasks[j].task_id %>"><button class="icon-button"><i class="fa fa-trash"></i></button></form></td>
+            <td><form method="POST" action="/delete?taskid=<%= tasks[j].task_id %>"><button class="icon-button-trash"><i class="fa fa-trash"></i></button></form></td>
           </tr>
           <% } %>  
         <% } %>  
@@ -26,7 +26,6 @@
       </table>
     <% } %>  
     
-
   </div>
 
   <div class="add-task-list-container">
@@ -41,8 +40,8 @@
         </div>
         
         <div class="form-field">
-          <label for="list">List</label>
-          <select id="list" name="list">
+          <label for="selectlist">List</label>
+          <select id="selectlist" name="selectlist">
             <% for (let i = 0; i < lists.length; i++) { %>
               <option value=<%= lists[i].list_id %>><%= lists[i].list_name%></option>
             <% } %>
@@ -61,6 +60,8 @@
       </form>
   
     </div>
+
+    <hr class="solid">
   
     <div class="add-list-container">
       <h1>Create new list:</h1>

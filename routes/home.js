@@ -30,7 +30,7 @@ router.get("/", (req, res) => {
 // POST - add new task
 router.post("/task", (req, res) => {
   const task_description = req.body.task;
-  const list_id = req.body.list;
+  const list_id = req.body.selectlist;
   const task_date = req.body.date;
 
   database
